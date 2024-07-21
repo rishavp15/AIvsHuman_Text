@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from app.models import TextUpload
-import pickle
 import joblib
 import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -10,6 +9,7 @@ import os
 # Create your views here.
 
 def prediction(request):
+    s_text = str('This Machine model will tell the above text will be AI generated or Human Generated')
     if request.method == 'POST':
         text = request.POST.get('text')
         
@@ -27,6 +27,7 @@ def prediction(request):
         print(pre[0])
 
         if text:
+            s_text = text
             if pre[0] == 1.0:
                 desc = 'Last Text was: '
                 pred = 'AI Generated'
@@ -44,8 +45,7 @@ def prediction(request):
         pred = 'Enter Text'
         color = '#3C6478'
 
-    s_text = str(text)
-    s_text = s_text.replace('\r', '↵')
+        s_text = s_text.replace('\r', '↵')
 
 
 
