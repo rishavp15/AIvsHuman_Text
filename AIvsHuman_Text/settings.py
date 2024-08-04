@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-bdxe=+g52i=-3uwt16j_y3#*&dpt!75aum)gg2z6o5h97wmv68
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+ALLOWED_HOSTS = ['spicy-sarine-rishav15-d76257bb.koyeb.app']
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1,[::1]").split(",")
 
 
